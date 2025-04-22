@@ -24,7 +24,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     dir_path = os.path.dirname(args.img_path)
-    img_name = os.path.basename(args.img_path)
+    img_name = os.path.basename(args.img_path).split('.')[0]
 
     output_path = os.path.join(dir_path, f"{img_name}_gray.png")
 

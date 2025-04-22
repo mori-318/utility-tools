@@ -70,14 +70,14 @@ class VideoEditor:
 
 if __name__ == "__main__":
     vide_editor = VideoEditor()
-    base_dir = r'/Volumes/NO NAME/NAIST_HAI_research/interview_datas/9'
+    base_dir = r'/Volumes/NO NAME/NAIST_HAI_research/interview_datas/14'
     os.makedirs(os.path.join(base_dir, "videos"), exist_ok=True)
 
     # Video 1
     input_video = os.path.join(base_dir, "1.mov")
     output_video = os.path.join(base_dir, "videos", "1.mp4")
     img_folder = os.path.join(base_dir, "extracted_images")
-    vide_editor.trim_video(input_video, 3, 20, output_video)
+    vide_editor.trim_video(input_video, 2, 20, output_video)
     vide_editor.extract_frames_evenly(output_video, img_folder, 100)
     print("\n\n")
 
@@ -85,7 +85,7 @@ if __name__ == "__main__":
     input_video = os.path.join(base_dir, "2.mov")
     output_video = os.path.join(base_dir, "videos", "2.mp4")
     img_folder = os.path.join(base_dir, "extracted_images")
-    vide_editor.trim_video(input_video, 3, 20, output_video)
+    vide_editor.trim_video(input_video, 2, 20, output_video)
     vide_editor.extract_frames_evenly(output_video, img_folder, 100)
     print("\n\n")
 
@@ -93,5 +93,5 @@ if __name__ == "__main__":
     input_video = os.path.join(base_dir, "3.mov")
     output_video = os.path.join(base_dir, "videos", "3.mp4")
     img_folder = os.path.join(base_dir, "extracted_images")
-    vide_editor.trim_video(input_video, 3, 20, output_video)
+    vide_editor.trim_video(input_video, 2, 20, output_video)
     vide_editor.extract_frames_evenly(output_video, img_folder, 100)

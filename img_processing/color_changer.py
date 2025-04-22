@@ -2,19 +2,16 @@ import os
 import argparse
 from PIL import Image
 
-def change_gray(img_path):
+def change_gray(img_path, output_path):
     """
     指定した画像をグレースケールに変換する
     Args:
         img_path (str): 画像のパス
+        output_path (str): 変換後の画像のパス
     """
     img = Image.open(img_path)
     gray_img = img.convert('L')
 
-    dir_path = os.path.dirname(img_path)
-    img_name = os.path.basename(img_path)
-
-    output_path = os.path.join(dir_path, f"{img_name}_gray.png")
     gray_img.save(output_path)
 
 if __name__ == '__main__':
@@ -25,4 +22,9 @@ if __name__ == '__main__':
     # 引数を解析
     args = parser.parse_args()
 
-    change_gray(args.img_path)
+    dir_path = os.path.dirname(args.img_path)
+    img_name = os.path.basename(args.img_path)
+
+    output_path = os.path.join(dir_path, f"{img_name}_gray.png")
+
+    change_gray(args.img_path, output_path)

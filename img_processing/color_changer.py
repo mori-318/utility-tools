@@ -2,17 +2,18 @@ import os
 import argparse
 from PIL import Image
 
-def change_gray(img_path, output_path):
-    """
-    指定した画像をグレースケールに変換する
-    Args:
-        img_path (str): 画像のパス
-        output_path (str): 変換後の画像のパス
-    """
-    img = Image.open(img_path)
-    gray_img = img.convert('L')
+class ColorChanger:
+    def change_gray(self, img_path, output_path):
+        """
+        指定した画像をグレースケールに変換する
+        Args:
+            img_path (str): 画像のパス
+            output_path (str): 変換後の画像のパス
+        """
+        img = Image.open(img_path)
+        gray_img = img.convert('L')
 
-    gray_img.save(output_path)
+        gray_img.save(output_path)
 
 if __name__ == '__main__':
     # パーサーの作成
@@ -27,4 +28,5 @@ if __name__ == '__main__':
 
     output_path = os.path.join(dir_path, f"{img_name}_gray.png")
 
-    change_gray(args.img_path, output_path)
+    color_changer = ColorChanger()
+    color_changer.change_gray(args.img_path, output_path)
